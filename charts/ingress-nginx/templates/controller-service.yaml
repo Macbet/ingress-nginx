@@ -56,10 +56,10 @@ spec:
     {{- end }}
   {{- end }}
   {{- range $key, $value := .Values.tcp }}
-    - name: {{ $key }}-tcp
+    - name: tcp-{{ $key }}
       port: {{ $key }}
       protocol: TCP
-      targetPort: {{ $key }}-tcp
+      targetPort: tcp-{{ $key }}
     {{- if $.Values.controller.service.nodePorts.tcp }}
     {{- if index $.Values.controller.service.nodePorts.tcp $key }}
       nodePort: {{ index $.Values.controller.service.nodePorts.tcp $key }}

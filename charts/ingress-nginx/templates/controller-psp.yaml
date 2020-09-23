@@ -53,12 +53,12 @@ spec:
     max: {{ .Values.controller.admissionWebhooks.port }}
 {{- end }}
 {{- range $key, $value := .Values.tcp }}
-  # {{ $key }}-tcp
+  # tcp-{{ $key }}
   - min: {{ $key }}
     max: {{ $key }}
 {{- end }}
 {{- range $key, $value := .Values.udp }}
-  # {{ $key }}-udp
+  # udp-{{ $key }}
   - min: {{ $key }}
     max: {{ $key }}
 {{- end }}
